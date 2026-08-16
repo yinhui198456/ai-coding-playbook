@@ -1,3 +1,54 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// AI Coding playbook: small, readable additions on top of Quartz defaults.
+
+:root {
+  --playbook-success: #15803d;
+  --playbook-progress: #2563eb;
+  --playbook-candidate: #b45309;
+}
+
+.page > #quartz-body .center {
+  max-width: 52rem;
+}
+
+article h1 {
+  letter-spacing: -0.02em;
+}
+
+article h2 {
+  margin-top: 2.4rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--lightgray);
+}
+
+article table {
+  display: table;
+  width: 100%;
+}
+
+article blockquote {
+  border-left-color: var(--secondary);
+  background: var(--highlight);
+  border-radius: 0 0.6rem 0.6rem 0;
+  padding: 0.7rem 1rem;
+}
+
+.mermaid {
+  margin: 1.25rem auto;
+}
+
+.callout[data-callout="tip"] {
+  border-color: var(--playbook-success);
+}
+
+.callout[data-callout="warning"] {
+  border-color: var(--playbook-candidate);
+}
+
+@media (max-width: 800px) {
+  article table {
+    display: block;
+    overflow-x: auto;
+  }
+}

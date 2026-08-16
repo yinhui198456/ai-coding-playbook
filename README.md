@@ -1,17 +1,31 @@
-# Quartz v5
+# AI Coding Playbook
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+个人 AI Coding 成长知识库。真实经验保存在 `content/` 的 Markdown 中，Quartz 负责生成展示网站。
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+## 本地使用
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+```powershell
+npm ci
+npx quartz build --serve
+```
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+浏览器访问 `http://localhost:8080`。
 
-## Sponsors
+只构建静态网站：
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+```powershell
+npx quartz build
+```
+
+生成结果位于 `public/`，该目录不提交到 Git。
+
+## 内容规则
+
+- 首页和经验卡先图后文字；
+- 详细技术原理放在折叠说明中；
+- 不保存当前提交编号、临时环境状态或凭据；
+- 经验经过重复验证后，才晋升为方法论、SOP 或 Skill。
+
+## Quartz
+
+本站基于 [Quartz](https://github.com/jackyzha0/quartz) v5。官方源保留为只读 `upstream`，用于后续升级。
