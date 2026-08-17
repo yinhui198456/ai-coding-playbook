@@ -222,7 +222,10 @@ plugins:
     enabled: true
     options:
       links:
+        学习区: /learning/
+        基础概念: /foundations/
         经验卡: /experience/
+        案例: /cases/
         能力地图: /capability-map/
         关于: /about
     layout:

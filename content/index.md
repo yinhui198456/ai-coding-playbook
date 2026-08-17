@@ -45,7 +45,10 @@ tags:
 
 ## 浏览知识库
 
+- [[learning/index|学习区]]：外部经验 → 手写复核 → 项目验证的转化管道，学习才是目的。
+- [[foundations/index|基础概念]]：术语、流程、规范的人话版扫盲笔记，先打地基。
 - [[experience/index|经验卡]]：真实问题如何变成下次可执行的方法。
+- [[cases/index|案例追踪]]：一个 Issue 从提出到验收的完整现场。
 - [[retrospectives/2026-08-16-TCP-AI-Coding阶段复盘|阶段复盘]]：本批经验来自哪些真实事件。
 - [[capability-map/index|能力地图]]：目前增强了什么、还欠缺什么。
 - [[methodology/index|个人方法论]]：只有多次验证有效的经验才会进入。
