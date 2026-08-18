@@ -27,6 +27,8 @@ flowchart LR
 
 ## ✍️ 我要填的汇总
 
+> 填法：[✏️ 打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-176-task-detail-layout.md) → `Ctrl+F` 搜「待我」→ 写在 `＿＿＿` 上 → **Commit changes** → 1~2 分钟本页自动更新。
+
 | 站 | 要填什么 | 一句话采集方式 |
 | --- | --- | --- |
 | 1 | 业务确认（日期+方式） | 对照原型图走一遍真实页面 |
@@ -65,6 +67,7 @@ flowchart LR
 - 📚 [全部原型](https://yinhui198456.github.io/team-capability-platform/assets/ui-prototypes/prototype-v1/index.html) ｜ [故事线](https://yinhui198456.github.io/team-capability-platform/assets/ui-prototypes/prototype-v1/storyline-v1.html) ｜ [页面地图](https://yinhui198456.github.io/team-capability-platform/assets/ui-prototypes/prototype-v1/page-map-v1.html)
 
 > [!todo] ✍️ 待我确认（就一件事：首屏改成这样，是你要的吗？）
+> ✏️ 填这里 → [打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-176-task-detail-layout.md)，`Ctrl+F` 搜「待我」，写在 `＿＿＿` 上，**Commit changes** 保存。
 > 1. 看上面的原型图和 M05 在线原型——"首屏只有状态和操作、资料收进折叠区"，**是不是你要的样子**；
 > 2. 打开 UAT 环境真实页面，展开一个进行中的任务，对比现在的样子；
 > 3. 哪里不对 → 在 [#176 评论](https://github.com/yinhui198456/team-capability-platform/issues/176)里写明，先改 Issue，不进 Coding。
@@ -118,6 +121,7 @@ flowchart LR
 > —— [commit b6ad583](https://github.com/yinhui198456/team-capability-platform/commit/b6ad583ff945f8ea1932d06ff2f5a25b65119dbc)（E2E 测试适配）
 
 > [!todo] ✍️ 待我逐条确认：AI 替我做的 4 个假设
+> ✏️ 填这里 → [打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-176-task-detail-layout.md)，`Ctrl+F` 搜「待我」，写在 `＿＿＿` 上，**Commit changes** 保存。
 > 方案没提前确认就进了 Coding（[[AC-001-user-flow-first|AC-001]] 的老毛病），现在补确认：
 >
 > | # | AI 的假设 | 我的决定（同意/改成什么） |
@@ -149,6 +153,7 @@ git log --oneline -3        # 期望：顶部两条是 #176 的提交
 ### 站 5 · 测试 ⬜
 
 > [!todo] ✍️ 到时采集（命令已备好，在 TCP 仓库 `frontend/` 目录跑）
+> ✏️ 填这里 → [打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-176-task-detail-layout.md)，`Ctrl+F` 搜「待我」，写在 `＿＿＿` 上，**Commit changes** 保存。
 > ```bash
 > npm run test          # 单元测试：代码级自动检查，含为本 Issue 新写的 73 行检查点
 > npm run test:e2e      # 端到端测试：模拟真人操作浏览器走完整流程
@@ -160,6 +165,7 @@ git log --oneline -3        # 期望：顶部两条是 #176 的提交
 ### 站 6 · 审查 ⬜
 
 > [!todo] ✍️ 到时派单（提示词直接复制）
+> ✏️ 填这里 → [打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-176-task-detail-layout.md)，`Ctrl+F` 搜「待我」，写在 `＿＿＿` 上，**Commit changes** 保存。
 > ```
 > 你是只读审查者，不许修改任何文件。审查 fix/issue-176-task-detail-layout
 > 相对 master 的全部改动，专门检查：1) 任务状态机、完成门禁、Evidence
@@ -172,6 +178,7 @@ git log --oneline -3        # 期望：顶部两条是 #176 的提交
 ### 站 7 · 合并 ⬜
 
 > [!todo] ✍️ 到时确认
+> ✏️ 填这里 → [打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-176-task-detail-layout.md)，`Ctrl+F` 搜「待我」，写在 `＿＿＿` 上，**Commit changes** 保存。
 > ```bash
 > gh pr list --head fix/issue-176-task-detail-layout   # 找到本 Issue 的 PR
 > gh pr view <编号> --json baseRefName                  # 亲眼确认 base 是 master
@@ -183,6 +190,7 @@ git log --oneline -3        # 期望：顶部两条是 #176 的提交
 ### 站 8 · 验收 ⬜
 
 > [!todo] ✍️ 到时验收
+> ✏️ 填这里 → [打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-176-task-detail-layout.md)，`Ctrl+F` 搜「待我」，写在 `＿＿＿` 上，**Commit changes** 保存。
 > 1. 真实 Chrome 打开年度成长计划页，按站 2 检查单的 6 个操作逐条做、逐条打勾；
 > 2. 两种尺寸都要：1440×900 和 768×900（F12 → 设备模拟）；
 > 3. 截图贴到 [#176 评论](https://github.com/yinhui198456/team-capability-platform/issues/176) 里当 UAT 反馈，**截图不含账号凭据**。

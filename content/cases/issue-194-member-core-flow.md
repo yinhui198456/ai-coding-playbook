@@ -26,6 +26,8 @@ flowchart LR
 
 ## ✍️ 我要填的汇总
 
+> 填法：[✏️ 打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-194-member-core-flow.md) → `Ctrl+F` 搜「待我」→ 写在 `＿＿＿` 上 → **Commit changes** → 1~2 分钟本页自动更新。
+
 | 站 | 要填什么 | 一句话采集方式 |
 | --- | --- | --- |
 | 1 | 业务确认（日期+方式） | 看原型图 + 读"一句话说人话" |
@@ -71,6 +73,7 @@ flowchart LR
 - 📚 [故事线确认稿](https://yinhui198456.github.io/team-capability-platform/assets/ui-prototypes/prototype-v1/storyline-v1.html)（#187 定版）
 
 > [!todo] ✍️ 待我确认（就一件事：这条核心流是你要的吗？）
+> ✏️ 填这里 → [打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-194-member-core-flow.md)，`Ctrl+F` 搜「待我」，写在 `＿＿＿` 上，**Commit changes** 保存。
 > 1. 看原型图和 M02 在线原型——"评级→草稿→手动生成"这条流水线，是不是你要的样子；
 > 2. 特别留意：**生成是手动点按钮才发生**，不是评完级自动出现任务；
 > 3. 哪里不对 → 在 [#194 评论](https://github.com/yinhui198456/team-capability-platform/issues/194)里写明。
@@ -125,6 +128,7 @@ flowchart LR
 **这次需求合同写得极细**（站 1 折叠区有原文），方案基本是照合同实现，AI 自由发挥的空间很小。
 
 > [!todo] ✍️ 待我逐条确认：AI 做的 3 个决定
+> ✏️ 填这里 → [打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-194-member-core-flow.md)，`Ctrl+F` 搜「待我」，写在 `＿＿＿` 上，**Commit changes** 保存。
 > 合同虽细，仍有几处实现决策值得我过目（都翻成了人话）：
 >
 > | # | AI 的决定 | 人话解释 | 我的决定（同意/改成什么） |
@@ -156,6 +160,7 @@ flowchart LR
 - 总控：Ubuntu 服务器 tmux 会话里的 Codex CLI（持有 Goal/Plan，不写代码）
 
 > [!todo] ✍️ 待我补充（不知道就问 AI，把答案贴上来）
+> ✏️ 填这里 → [打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-194-member-core-flow.md)，`Ctrl+F` 搜「待我」，写在 `＿＿＿` 上，**Commit changes** 保存。
 > 1. 本次实施的 worktree 目录名是？（问总控："#194 的 worktree 路径是什么"）
 > 2. 本会话 CC 的 token 用量 / 会话时长？（问 CC："报告本会话 token 用量"）
 >
@@ -224,6 +229,7 @@ flowchart LR
 > 标准流水线是"合并→验收"，但 #194 的合同写明：**停在用户最终确认，merge/Ready/关闭决定必须问用户**。所以实际顺序反过来——你在测试环境验收通过 → 说"可以合并" → AI 才把 PR 转 Ready 并合并。**没看到验收结果前，任何"已完成"的说法都不算数。**
 
 > [!todo] ✍️ 到时确认
+> ✏️ 填这里 → [打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-194-member-core-flow.md)，`Ctrl+F` 搜「待我」，写在 `＿＿＿` 上，**Commit changes** 保存。
 > ```bash
 > gh pr view 195 --repo yinhui198456/team-capability-platform --json baseRefName,isDraft
 > ```
@@ -257,6 +263,7 @@ flowchart LR
 > 顺带学会读 Sol 的屏幕：`gh run view ... sleep 15` 循环 = 它在等 CI 出结果；底部 `Working (3m 02s)` = 还在干活；`Goal stalled` = 停机待命中。
 
 > [!todo] ✍️ 到时验收（先确认上面两个条件都 ✅）
+> ✏️ 填这里 → [打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-194-member-core-flow.md)，`Ctrl+F` 搜「待我」，写在 `＿＿＿` 上，**Commit changes** 保存。
 > 1. **版本核对**（[#192](https://github.com/yinhui198456/team-capability-platform/issues/192) 准入）：问 Sol"测试环境当前部署的 SHA 是多少"，应等于 PR 最终顶端——版本对不上，验收结果不算数；
 > 2. 用测试身份登录上面的测试环境地址（**不是本地**）；
 > 3. 照站 2 检查单的 9 条逐条操作、逐条打勾；
