@@ -9,6 +9,9 @@ tags:
 
 # TCP AI Coding 阶段复盘
 
+> [!important] 本页怎么填写（浏览器里就能写）
+> 点 → [✏️ 编辑本页](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/retrospectives/2026-08-16-tcp-phase-review.md) → 找「手写」小节 → **Commit changes** 保存，1~2 分钟自动更新。
+
 ## 本阶段一句话
 
 已经从“让 Agent 尽快写出代码”进步到“先确认业务、限制 Agent 权限、再用独立证据证明可用”；但复杂业务仍有过早进入 Coding 的问题。
