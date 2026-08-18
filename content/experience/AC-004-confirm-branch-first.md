@@ -11,6 +11,9 @@ aliases:
 
 # AC-004｜AI 改代码前，先确认在哪个分支
 
+> [!important] 本页怎么填写（浏览器里就能写）
+> 点 → [✏️ 编辑本页](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/experience/AC-004-confirm-branch-first.md) → 搜「✍️」→ 写在横线上 → **Commit changes** 保存，1~2 分钟自动更新。
+
 > [!tip] 一句话经验
 > Agent 只会继承"当前所在分支"，不会主动问"这次该在哪个宇宙改"——分支确认永远是我的责任。
 
@@ -57,7 +60,7 @@ flowchart LR
 - [PR #179：base 为非 master 的堆叠分支](https://github.com/yinhui198456/team-capability-platform/pull/179)
 - [Issue #187：明确警告分支现状 ≠ master 现状](https://github.com/yinhui198456/team-capability-platform/issues/187)
 - [Issue #55：多 Worktree 环境隔离](https://github.com/yinhui198456/team-capability-platform/issues/55)
-- [Issue #176 评论（2026-08-17）](https://github.com/yinhui198456/team-capability-platform/issues/176#issuecomment-5312115520)：主控与写入者未分离 + 复用历史目录名，第一轮改动误写进长期测试环境；详见 [[cases/issue-176-任务详情首屏信息架构|案例 #176]]
+- [Issue #176 评论（2026-08-17）](https://github.com/yinhui198456/team-capability-platform/issues/176#issuecomment-5312115520)：主控与写入者未分离 + 复用历史目录名，第一轮改动误写进长期测试环境；详见 [[cases/issue-176-task-detail-layout|案例 #176]]
 
 ## 对应能力
 

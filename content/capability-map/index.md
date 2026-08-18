@@ -22,4 +22,4 @@ tags:
 
 ## 当前最值得增强
 
-**复杂需求先定义 Business Journey。** 这是下一阶段唯一刻意练习项，详见 [[AC-001-复杂功能先画用户流程]]。
+**复杂需求先定义 Business Journey。** 这是下一阶段唯一刻意练习项，详见 [[AC-001-user-flow-first]]。

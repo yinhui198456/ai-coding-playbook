@@ -19,6 +19,11 @@ npx quartz build
 
 生成结果位于 `public/`，该目录不提交到 Git。
 
+## 在线使用（推荐）
+
+- 阅读：https://yinhui198456.github.io/ai-coding-playbook/
+- 填写手写区：页首点「✏️ 编辑本页」→ GitHub 网页编辑器改完 Commit，1~2 分钟自动重新部署（Actions 流水线 `.github/workflows/deploy.yml`）。
+
 ## 内容规则
 
 - 首页和经验卡先图后文字；
@@ -26,7 +31,9 @@ npx quartz build
 - 不保存当前提交编号、临时环境状态或凭据；
 - 经验经过重复验证后，才晋升为方法论、SOP 或 Skill；
 - AI 只负责起草、整理和找证据；✍️ 手写区只能由本人填写，手写区为空的页面永远停在「📝 AI 草稿」状态；
-- 外部资料只存路标（链接+用途），不复制正文；外部说法与项目证据冲突时以真实证据为准。
+- 外部资料只存路标（链接+用途），不复制正文；外部说法与项目证据冲突时以真实证据为准；
+- 入库的链接、Issue/PR 编号、评论锚点、commit SHA 必须先验证真实存在，拿不到证据就标「待验证」；
+- 目录结构与命名规范见 `content/sop/directory-conventions.md`，每周复盘时按检查单整理。
 
 ## Quartz
 

@@ -19,15 +19,16 @@ tags:
 | 回答 | 下次遇到怎么办 | 这个词/这一步是什么意思 |
 | 晋升 | 重复验证后进入方法论 | 不涉及晋升，随时修订 |
 
-## 四篇学习笔记
+## 五篇学习笔记
 
 1. [[foundations/glossary|术语词典]]：Agent、Context、Issue、PR、UAT……每个词一句人话，标注我在哪张经验卡里踩过它。
 2. [[foundations/ai-coding-workflow|AI Coding 基本流程]]：从一个想法到用户能用，标准流程长什么样，我目前卡在哪几步。
 3. [[foundations/practices|通行规范与好习惯]]：小步提交、一个写入者、证据分级等行业通行做法，以及哪些已被我的项目验证。
 4. [[foundations/git-basics|Git 基础操作规范]]：最小命令集、开工三步确认、分支纪律、Worktree——AI Coding 最高发的混乱来源。
+5. [[foundations/github-actions|GitHub Actions 扫盲]]：Actions 页一堆运行记录是什么？三道 CI 门禁、红绿怎么读、和 AI 自报测试的区别。
 
 ## 学习原则
 
 - 先图后文字，10 秒看不懂就重写。
-- 每个概念都要能回答："它在 [[retrospectives/2026-08-16-TCP-AI-Coding阶段复盘|TCP 项目]] 里对应什么？"
+- 每个概念都要能回答："它在 [[retrospectives/2026-08-16-tcp-phase-review|TCP 项目]] 里对应什么？"
 - 学到发现笔记错了，直接改，不留面子。
