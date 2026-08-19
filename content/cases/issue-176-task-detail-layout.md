@@ -14,6 +14,11 @@ tags:
 > 2. `Ctrl+F` 搜「✍️」，把答案写在 `＿＿＿` 横线上；
 > 3. 点绿色 **Commit changes** 保存，1~2 分钟后线上页面自动更新。
 
+<div class="kb-write" data-kb-file="cases/issue-176-task-detail-layout.md">
+  <a class="kb-write-btn" href="https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-176-task-detail-layout.md" style="display:inline-block;margin:4px 0 8px;padding:8px 14px;border:2px solid #d29922;border-radius:8px;font-weight:700;cursor:pointer">✍️ 在本机直接填写（免登录）</a>
+</div>
+<script>(function(){if(window.__kbwBoot)return;window.__kbwBoot=1;var b=(document.body&&document.body.dataset.basepath)||"";var s=document.createElement("script");s.src=b+"/static/kb-write.js";s.onerror=function(){var t=document.createElement("script");t.src="/static/kb-write.js";document.body.appendChild(t)};document.body.appendChild(s)})()</script>
+
 **Issue**：[#176](https://github.com/yinhui198456/team-capability-platform/issues/176)（UAT 体验 · P1）｜ **当前站**：4/8 Coding
 
 ```mermaid

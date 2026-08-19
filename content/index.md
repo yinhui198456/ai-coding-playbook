@@ -54,3 +54,5 @@ tags:
 - [[methodology/index|个人方法论]]：只有多次验证有效的经验才会进入。
 - [[sop/index|SOP 与检查表]]：暂不提前建设，等待方法稳定。
 - [[interview/index|面试案例库]]：只保存有真实项目证据的回答素材。
+
+<script>(function(){if(window.__kbwBoot)return;window.__kbwBoot=1;var b=(document.body&&document.body.dataset.basepath)||"";var s=document.createElement("script");s.src=b+"/static/kb-write.js";s.onerror=function(){var t=document.createElement("script");t.src="/static/kb-write.js";document.body.appendChild(t)};document.body.appendChild(s)})()</script>

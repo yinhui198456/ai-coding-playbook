@@ -14,6 +14,11 @@ aliases:
 > [!important] 本页怎么填写（浏览器里就能写）
 > 点 → [✏️ 编辑本页](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/experience/AC-004-confirm-branch-first.md) → 搜「✍️」→ 写在横线上 → **Commit changes** 保存，1~2 分钟自动更新。
 
+<div class="kb-write" data-kb-file="experience/AC-004-confirm-branch-first.md">
+  <a class="kb-write-btn" href="https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/experience/AC-004-confirm-branch-first.md" style="display:inline-block;margin:4px 0 8px;padding:8px 14px;border:2px solid #d29922;border-radius:8px;font-weight:700;cursor:pointer">✍️ 在本机直接填写（免登录）</a>
+</div>
+<script>(function(){if(window.__kbwBoot)return;window.__kbwBoot=1;var b=(document.body&&document.body.dataset.basepath)||"";var s=document.createElement("script");s.src=b+"/static/kb-write.js";s.onerror=function(){var t=document.createElement("script");t.src="/static/kb-write.js";document.body.appendChild(t)};document.body.appendChild(s)})()</script>
+
 > [!tip] 一句话经验
 > Agent 只会继承"当前所在分支"，不会主动问"这次该在哪个宇宙改"——分支确认永远是我的责任。
 

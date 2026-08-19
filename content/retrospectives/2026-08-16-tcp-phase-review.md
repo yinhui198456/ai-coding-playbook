@@ -12,6 +12,11 @@ tags:
 > [!important] 本页怎么填写（浏览器里就能写）
 > 点 → [✏️ 编辑本页](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/retrospectives/2026-08-16-tcp-phase-review.md) → 找「手写」小节 → **Commit changes** 保存，1~2 分钟自动更新。
 
+<div class="kb-write" data-kb-file="retrospectives/2026-08-16-tcp-phase-review.md">
+  <a class="kb-write-btn" href="https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/retrospectives/2026-08-16-tcp-phase-review.md" style="display:inline-block;margin:4px 0 8px;padding:8px 14px;border:2px solid #d29922;border-radius:8px;font-weight:700;cursor:pointer">✍️ 在本机直接填写（免登录）</a>
+</div>
+<script>(function(){if(window.__kbwBoot)return;window.__kbwBoot=1;var b=(document.body&&document.body.dataset.basepath)||"";var s=document.createElement("script");s.src=b+"/static/kb-write.js";s.onerror=function(){var t=document.createElement("script");t.src="/static/kb-write.js";document.body.appendChild(t)};document.body.appendChild(s)})()</script>
+
 ## 本阶段一句话
 
 已经从“让 Agent 尽快写出代码”进步到“先确认业务、限制 Agent 权限、再用独立证据证明可用”；但复杂业务仍有过早进入 Coding 的问题。
