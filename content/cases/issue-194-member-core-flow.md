@@ -73,7 +73,9 @@ flowchart LR
 
 **先看原型图，再看字**：
 
-![UI-02 能力评级与差距页视觉基线](https://raw.githubusercontent.com/yinhui198456/team-capability-platform/master/docs/assets/ui-prototypes/UI-02-assessment-gap.png)
+<a href="https://raw.githubusercontent.com/yinhui198456/team-capability-platform/master/docs/assets/ui-prototypes/UI-02-assessment-gap.png"><img src="https://raw.githubusercontent.com/yinhui198456/team-capability-platform/master/docs/assets/ui-prototypes/UI-02-assessment-gap.png" alt="UI-02 能力评级与差距页视觉基线" style="max-width:640px;border:1px solid #8884;border-radius:6px"></a>
+
+> 图可点开放大。
 
 - 🖥️ [M02 能力评级 · 在线交互原型](https://yinhui198456.github.io/team-capability-platform/assets/ui-prototypes/prototype-v1/index.html?collection=selected&page=M02)（本 Issue 主战场）
 - 📚 [故事线确认稿](https://yinhui198456.github.io/team-capability-platform/assets/ui-prototypes/prototype-v1/storyline-v1.html)（#187 定版）
@@ -87,11 +89,11 @@ flowchart LR
 > **我的确认（日期 + 方式）：**＿＿＿＿＿＿
 
 > [!example]- 业务合同关键条款原文（想知道"细到什么程度"再展开）
-> > 保存评级、维护计划草稿、生成正式任务是三个独立动作。`current_level=0` 是已评级，不得按空值处理。
+> 「保存评级、维护计划草稿、生成正式任务是三个独立动作。`current_level=0` 是已评级，不得按空值处理。」
 >
-> > 任一所选项非法时整批零生成、零复用、零部分写入；页面定位具体 L3 并说明处理方法。
+> 「任一所选项非法时整批零生成、零复用、零部分写入；页面定位具体 L3 并说明处理方法。」
 >
-> > 新流程不创建新的 Assessment Review，不进入 Buddy 自评复核队列……历史 Assessment Review 只读保留，不迁移、不回填、不删除。
+> 「新流程不创建新的 Assessment Review，不进入 Buddy 自评复核队列……历史 Assessment Review 只读保留，不迁移、不回填、不删除。」
 >
 > —— [#194 业务合同](https://github.com/yinhui198456/team-capability-platform/issues/194)。**这就是"需求三件套"的完全体**：不仅有要做什么/不做什么/成功标准，还把每个业务规则的边界写死了。
 

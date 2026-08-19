@@ -66,7 +66,9 @@ flowchart LR
 
 **先看原型图，再看字**：
 
-![UI-03 年度计划与任务页视觉基线](https://raw.githubusercontent.com/yinhui198456/team-capability-platform/master/docs/assets/ui-prototypes/UI-03-annual-plan-task.png)
+<a href="https://raw.githubusercontent.com/yinhui198456/team-capability-platform/master/docs/assets/ui-prototypes/UI-03-annual-plan-task.png"><img src="https://raw.githubusercontent.com/yinhui198456/team-capability-platform/master/docs/assets/ui-prototypes/UI-03-annual-plan-task.png" alt="UI-03 年度计划与任务页视觉基线" style="max-width:640px;border:1px solid #8884;border-radius:6px"></a>
+
+> 图可点开放大。
 
 - 🖥️ [M05 任务详情 · 在线交互原型](https://yinhui198456.github.io/team-capability-platform/assets/ui-prototypes/prototype-v1/index.html?collection=selected&page=M05)（推荐，点开直接看效果）
 - 📚 [全部原型](https://yinhui198456.github.io/team-capability-platform/assets/ui-prototypes/prototype-v1/index.html) ｜ [故事线](https://yinhui198456.github.io/team-capability-platform/assets/ui-prototypes/prototype-v1/storyline-v1.html) ｜ [页面地图](https://yinhui198456.github.io/team-capability-platform/assets/ui-prototypes/prototype-v1/page-map-v1.html)
@@ -84,11 +86,11 @@ flowchart LR
 >
 > 行业里"需求写清楚"的标准动作（三件套：要做什么 / 不做什么 / 成功标准）：
 >
-> > 明确目标：写清楚**要做什么、不要做什么、成功标准是什么**。
-> > —— [vibe-coding-cn · 开发流程](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/docs/workflow/development-process.md) 第 1 条
+> 「明确目标：写清楚**要做什么、不要做什么、成功标准是什么**。」
+> —— [vibe-coding-cn · 开发流程](https://github.com/tradecatlabs/vibe-coding-cn/blob/develop/docs/workflow/development-process.md) 第 1 条
 >
-> > 针对我的计划，反复追问每一个细节……每次只问一个问题……确认双方理解一致之前，不要开始行动。
-> > —— [鱼皮 ai-guide · 用 grill-me 让 AI 拷问你的需求](https://github.com/liyupi/ai-guide/blob/main/Vibe%20Coding%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/30%20%E7%BB%8F%E9%AA%8C%E6%8A%80%E5%B7%A7/%E7%94%A8%20grill-me%20%E8%AE%A9%20AI%20%E6%8B%B7%E9%97%AE%E4%BD%A0%E7%9A%84%E9%9C%80%E6%B1%82.md)（安装：`npx skills add https://github.com/mattpocock/skills --skill grill-me`）
+> 「针对我的计划，反复追问每一个细节……每次只问一个问题……确认双方理解一致之前，不要开始行动。」
+> —— [鱼皮 ai-guide · 用 grill-me 让 AI 拷问你的需求](https://github.com/liyupi/ai-guide/blob/main/Vibe%20Coding%20%E9%9B%B6%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/30%20%E7%BB%8F%E9%AA%8C%E6%8A%80%E5%B7%A7/%E7%94%A8%20grill-me%20%E8%AE%A9%20AI%20%E6%8B%B7%E9%97%AE%E4%BD%A0%E7%9A%84%E9%9C%80%E6%B1%82.md)（安装：`npx skills add https://github.com/mattpocock/skills --skill grill-me`）
 
 > [!note]- 原型链接打开是源码？（不是坏了，展开看）
 > GitHub 上打开 `.html` 只显示源码。在线看用上面的 🖥️ 链接；离线看：本地 TCP 仓库双击 `docs/assets/ui-prototypes/prototype-v1/index.html`。
