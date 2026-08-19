@@ -14,15 +14,15 @@ tags:
 > 2. `Ctrl+F` 搜「✍️」，把答案写在 `＿＿＿` 横线上；
 > 3. 点绿色 **Commit changes** 保存，1~2 分钟后线上页面自动更新。
 
-**Issue**：[#194](https://github.com/yinhui198456/team-capability-platform/issues/194)（Pilot · 核心流 · P0）｜ **PR**：[Draft #195](https://github.com/yinhui198456/team-capability-platform/pull/195) ｜ **当前站**：8/8 验收
+**Issue**：[#194](https://github.com/yinhui198456/team-capability-platform/issues/194)（Pilot · 核心流 · P0）｜ **PR**：[Draft #195](https://github.com/yinhui198456/team-capability-platform/pull/195) ｜ **当前站**：8/8 验收（⛔ 阻塞：等你一个授权决策，见站 8）
 
 ```mermaid
 flowchart LR
-    S1["✅ 1 需求"] --> S2["✅ 2 Issue"] --> S3["✅ 3 方案"] --> S4["✅ 4 Coding"] --> S5["✅ 5 测试"] --> S6["✅ 6 审查"] --> S7["⬜ 7 合并"] --> S8["✍️ 8 验收"]
-    style S8 fill:#fde68a
+    S1["✅ 1 需求"] --> S2["✅ 2 Issue"] --> S3["✅ 3 方案"] --> S4["✅ 4 Coding"] --> S5["✅ 5 测试"] --> S6["✅ 6 审查"] --> S7["⬜ 7 合并"] --> S8["⛔ 8 验收·待授权"]
+    style S8 fill:#fca5a5
 ```
 
-> 图例：✅ 已完成 ｜ ✍️ 黄色 = 等我来填 ｜ ⬜ 还没到
+> 图例：✅ 已完成 ｜ ✍️ 黄色 = 等我来填 ｜ ⬜ 还没到 ｜ ⛔ 红色 = 阻塞，需要我做决定
 
 ## ✍️ 我要填的汇总
 
@@ -30,10 +30,11 @@ flowchart LR
 
 | 站 | 要填什么 | 一句话采集方式 |
 | --- | --- | --- |
+| ⛔ 8 | **授权决策：要不要修数据库约束** | 读站 8 阻塞说明 → 去 Sol 会话回复"授权/不授权" |
 | 1 | 业务确认（日期+方式） | 看原型图 + 读"一句话说人话" |
 | 3 | 确认 AI 做的 3 个决定 | 逐条标"同意 / 改" |
 | 7 | PR base + 终态七项 | 打开 PR #195 亲眼看 |
-| 8 | 真实 Chrome 9 条逐条打勾 | 测试环境登录操作 |
+| 8 | 真实 Chrome 9 条逐条打勾 | 阻塞解除后，测试环境登录操作 |
 | 末 | 我的复盘 | 手写 |
 
 > [!note]- 本页黑话速查（看不懂的词先点这里）
@@ -117,13 +118,19 @@ flowchart LR
 
 ### 站 3 · 方案 ✅（与实际实现一致）
 
-方案体现在 [PR #195](https://github.com/yinhui198456/team-capability-platform/pull/195)（共 61 个文件，+2947/−3257 行）的两个提交，原文引用：
+方案体现在 [PR #195](https://github.com/yinhui198456/team-capability-platform/pull/195)（18 个提交，102 个文件，+4827/−4479 行）。核心两个提交的原文引用：
 
 > 三独立动作：保存能力评级 / 加入-移出计划草稿 / 显式生成所选学习任务。仅显式生成写入 plan_item/learning_task；plan_month=YYYY-MM 为唯一时间输入。/submit 退役……历史评估只读。
 > —— [commit 7af8a16](https://github.com/yinhui198456/team-capability-platform/commit/7af8a16b8627d583bdc3c8638619890d4b56ee2c)（主体实现，54 个文件）
 
 > P1-1 缺月仍可生成：客户端预检零请求列出 L3 并定位首项，不再禁用按钮……P1-3 Buddy 自评复核退役……review POST 稳定 410 零写入……P1-4 generate-plan-items 消费 Idempotency-Key……并发同 key 单次写入。
 > —— [commit 6586ed0](https://github.com/yinhui198456/team-capability-platform/commit/6586ed0b55b8baa8b630f8fff4673872ab7e1074)（评审修复，25 个文件）
+
+**随后一夜又推进了三个阶段**（[提交列表](https://github.com/yinhui198456/team-capability-platform/pull/195/commits)）：
+
+1. **E2E 对齐轮**（约 10 个提交）：把还在检查旧页面的浏览器测试全部对齐新合同，E2E 门禁从 189 过/80 挂修到全绿；
+2. **M02 V1 原型对齐**（[commit 006bdfe](https://github.com/yinhui198456/team-capability-platform/commit/006bdfe)）：两个主操作按钮 + 行内加入/移出 + 草稿自动保存——让实现和定版原型长得一样；
+3. **第三轮评审修复**（`017471f`）：批量评级后草稿保存会用旧版本号 → 改为用服务端返回的新版本号推进。
 
 **这次需求合同写得极细**（站 1 折叠区有原文），方案基本是照合同实现，AI 自由发挥的空间很小。
 
@@ -141,17 +148,18 @@ flowchart LR
 
 ### 站 4 · Coding ✅（AI 已整理）
 
-**改了哪些文件、各是干什么的**（[PR #195 全部 61 个文件](https://github.com/yinhui198456/team-capability-platform/pull/195/files)，按用途归类）：
+**改了哪些文件、各是干什么的**（[PR #195 全部 102 个文件](https://github.com/yinhui198456/team-capability-platform/pull/195/files)，按用途归类）：
 
 | 目录 | 文件数 | 用途（人话） |
 | --- | --- | --- |
 | `backend/app/assessment` | 2 | 后端·评级相关接口 |
-| `backend/app/planning` | 3 | 后端·计划生成逻辑（点"生成"按钮后跑的代码） |
+| `backend/app/planning` | 4 | 后端·计划生成逻辑（点"生成"按钮后跑的代码） |
 | `backend/app/migrations` | 2 | 数据库搬家脚本：把月份字段从数字改成 `YYYY-MM` 文本 |
 | `backend/app/access` | 1 | 后端·权限（谁能看/操作什么） |
 | `backend/tests` | 34 | 后端测试（大头在这，新合同全靠它们锁死） |
 | `frontend/src` | 18+1 | 前端页面：M02 评级页三动作、M03 计划列表 |
-| `frontend/tests/e2e` | 13+25 | 浏览器自动化测试 + 截图基线（旧 Buddy 复核页删除，其截图基线随之删除） |
+| `frontend/tests/e2e` | 10+25 | 浏览器自动化测试 + 截图基线（旧 Buddy 复核页删除，其截图基线随之删除） |
+| `scripts` | 1 | 服务器上的 UI 走查脚本（对齐新导航合同） |
 
 **执行现场**：
 
@@ -190,35 +198,43 @@ flowchart LR
 **红测→绿测**：先在 master 上跑新测试确认**失败**（证明旧代码真没这功能），实现后再跑**通过**。4 组旧合同断言族均为"修复前红、修复后绿"，没删没跳任何测试。
 
 > [!question] 为什么没有"模拟真人操作 Chrome"的测试截图？
-> 问得好——那类测试叫 E2E（端到端），TCP 用 Playwright 跑。**这轮它恰恰是唯一红的**：一批旧 E2E 用例还在检查"已关闭的 Buddy 复核页"，所以一直失败（这就是站 3 决定 2 留下的尾巴）。真人 Chrome 测试自动化替代不了——就是站 8 等你做的验收。
+> 那类测试叫 E2E（端到端），TCP 用 Playwright 跑。它一度是**唯一红的**（旧用例还在检查已关闭的 Buddy 复核页：189 过 / 80 挂）——夜间"E2E 对齐轮"约 10 个提交把它们全部对齐新合同，现已全绿。**真人 Chrome 验收自动化替代不了**：站 8 里 Sol 的隔离环境预演就抓到了 E2E 没抓到的真问题。
+
+> [!success] CI 三道门禁已全绿（顶端 `017471f`）
+> 后端 / 前端 / E2E 同一 SHA 全部 ✅（[PR checks](https://github.com/yinhui198456/team-capability-platform/pull/195/checks)）。这是"同一提交全绿"的准入条件首次满足。
 
 > [!note] GitHub 上反复出现的 Actions 是什么？
 > 你看到的 [Actions 运行](https://github.com/yinhui198456/team-capability-platform/actions/runs/32124510046)是 **CI（持续集成）**：每次 push 代码，GitHub 自动跑三道门禁——`Backend Quality Gate`（后端检查+测试）、`Frontend Quality Gate`（前端检查+测试）、`E2E Tests`（浏览器自动化）。**不用人点，push 就触发**，结果直接挂在 PR 的 checks 里（见站 6）。它和站 5 的关系：站 5 是 AI 在自己机器上跑测试的报告，CI 是 GitHub 在干净环境里**独立复跑**——两份证据互相印证，防止"我机器上能过"。详见 [[glossary|术语表 · CI]]。
 
 ### 站 6 · 审查 ✅（评审→修复→复审，闭环完整）
 
-独立只读审查由非写入者（Sol）执行，两轮都在 [PR #195](https://github.com/yinhui198456/team-capability-platform/pull/195) 评审区：
+独立只读审查由非写入者（Sol）执行，**三轮**都在 [PR #195](https://github.com/yinhui198456/team-capability-platform/pull/195) 评审区：
 
-**第一轮**：P0=0、**P1=4，当前不可部署**。4 个 P1 的人话版：
+**第一轮**（08-17）：P0=0、**P1=4，当前不可部署**。4 个 P1 的人话版：
 
 1. 缺月份时生成按钮直接变灰点不动——用户永远看不到中文提示 → 改为可点击但不发请求，逐项指出缺什么；
 2. M03 列表还按旧字段筛选显示，新生成的任务会显示"—"甚至消失；
 3. Buddy 自评复核旧入口还能操作、还能写库——与"无新复核队列"合同冲突；
 4. 生成接口不是真幂等——重复点击/网络重试可能建重复任务。
 
-**修复**：[commit 6586ed0](https://github.com/yinhui198456/team-capability-platform/commit/6586ed0b55b8baa8b630f8fff4673872ab7e1074) 逐项修复 → **复审**：P0=0、P1=0，可进入下一门禁，但仍不自动 Ready/合并/部署。
+**修复**：[commit 6586ed0](https://github.com/yinhui198456/team-capability-platform/commit/6586ed0b55b8baa8b630f8fff4673872ab7e1074) 逐项修复 → **第二轮复审**（08-18）：P0=0、P1=0，可进入下一门禁，但仍不自动 Ready/合并/部署。
+
+**第三轮复审**（08-19，[原文](https://github.com/yinhui198456/team-capability-platform/pull/195#pullrequestreview-4967414284)）：代码变了就重新审——在原型对齐后的代码上**又抓到一个新 P1**：批量评级后草稿自动保存会用旧版本号，可能覆盖别人刚存的内容 → `017471f` 修复 → [增量复审通过](https://github.com/yinhui198456/team-capability-platform/pull/195#pullrequestreview-4967631654)（P0=0、P1=0）。
+
+> [!success] 这一站是本案例的高光
+> **评审不是一次性盖章，是每改一轮就要重来的门禁**：第一轮拦 4 个 P1，第三轮又拦 1 个新 P1（版本号竞态）——这种并发问题靠作者自测几乎不可能发现。
 
 > [!note] PR 页面上的 checks 是什么？（小白扫盲）
 > [PR #195 的 checks](https://github.com/yinhui198456/team-capability-platform/pull/195/checks) 是 CI 门禁在这个 PR 上的成绩单，4 项分别是：
 >
 > | check | 干什么的 | 状态演变 |
 > | --- | --- | --- |
-> | `lint-and-test` | 后端门禁：风格检查 + pytest 全套 | 🔴 → 最新提交重跑中 |
-> | `lint-format-test-build` | 前端门禁：风格检查 + Vitest + 构建 | 🔴 → `6326518` 已转 🟢 |
-> | `e2e` | 浏览器自动化测试 | 🔴（旧用例检查已退役页面）→ **AI 已修复，`6326518` 转 🟢（269 passed，4.7 分钟）** |
+> | `lint-and-test` | 后端门禁：风格检查 + pytest 全套 | 🔴 → `017471f` 🟢 |
+> | `lint-format-test-build` | 前端门禁：风格检查 + Vitest + 构建 | 🔴 → `017471f` 🟢 |
+> | `e2e` | 浏览器自动化测试 | 🔴（189 过/80 挂：旧用例检查已退役页面）→ E2E 对齐轮修复 → `017471f` 🟢 |
 > | `docker-test-stage` | 用 Docker 把整套环境装起来跑一遍，验证"干净环境能起" | 🟢 |
 >
-> 读法：🔴 不一定是新代码错了——点进去看日志，区分"新失败"和"已知尾巴"。Issue 要求**同一提交的必需检查全绿**才能往下走；E2E 的"已知尾巴"最终被修掉了（这正是站 3 决定 2 说"留到后续轮次"的那批，实际本轮就解决了）。
+> 读法：🔴 不一定是新代码错了——点进去看日志，区分"新失败"和"已知尾巴"。但注意：**CI 全绿 ≠ 能验收**——站 8 的真实 Chrome 预演在全绿之后仍抓到了一个 500 阻塞。
 
 > [!success] 这一站是本案例的高光
 > 对照 #176"方案没确认就 Coding"，#194 全程按门禁走：合同先行 → 红测绿测 → 独立审查 → 修复 → 复审。**独立审查第一轮就拦下 4 个 P1**，其中"缺月份按钮变灰导致提示不可达"这种，靠作者自测几乎不可能发现。
@@ -239,34 +255,39 @@ flowchart LR
 >
 > **记录：**＿＿＿＿＿＿
 
-### 站 8 · 验收 ✍️（就差这一步）
+### 站 8 · 验收 ⛔ 阻塞中（等你一个决策）
 
 **验收环境**：
 
 | 项 | 值 |
 | --- | --- |
-| 地址 | `http://<Ubuntu 服务器地址>:18081`（就是你 `ssh tch-ubuntu` 连的那台；前端容器端口 18081） |
-| 部署方式 | 服务器上 Docker Compose 三容器：frontend（18081）/ backend / postgres |
-| 登录 | 配置好的测试身份（凭据在服务器 `team-capability-platform-uat.env`，勿外泄、勿截图） |
+| 隔离 UAT 环境 | `http://<Ubuntu 服务器地址>:19094`（Sol 专为本次验收建的隔离环境：独立数据库，不动共享数据） |
+| 共享测试环境 | `http://<Ubuntu 服务器地址>:18081`（日常用，本次验收别用它） |
+| 登录 | 配置好的测试身份（凭据在服务器上，勿外泄、勿截图） |
 | 查看现场 | `ssh tch-ubuntu` 后 `tmux attach -t tcp-codex-control` 可看 Sol 总控会话（按 `Ctrl+B` 再按 `D` 退出） |
 
-> [!question] Sol 会话还在运行，到底什么时候能验收？
-> **两个条件同时满足才行**（2026-08-18 下午实时核对过）：
+> [!failure] 08-19 阻塞事件：CI 全绿之后，真实 Chrome 抓到了真问题
+> Sol 先替我做了一轮验收预演（[完整记录](https://github.com/yinhui198456/team-capability-platform/pull/195#issuecomment-5337632340)）：
 >
-> | 条件 | 怎么查 | 当前状态 |
-> | --- | --- | --- |
-> | ① 同一 SHA 的三道门禁全绿 | [PR #195 checks](https://github.com/yinhui198456/team-capability-platform/pull/195/checks) | ⏳ 前端 ✅、E2E ✅（269 passed，已知尾巴已修复）、**后端还在跑** |
-> | ② Sol 不再推新提交 | 分支顶端 SHA 稳定（连续两次查看不变） | ⏳ 顶端 `6326518`，Sol 正在等后端门禁终态 |
+> 1. 隔离环境部署 exact SHA `017471fe`，自动 smoke 全过；
+> 2. 真实 Chrome 手测：部分评级保存（含评 0 级）、刷新/重登草稿保持、缺月份零生成+中文逐项提示、月份选择器整框可点——**全部通过** ✅；
+> 3. **但点"生成所选学习任务"时服务器报 500**：数据库里有条旧约束（外键），不允许"新的评级往已有的年度计划里追加任务"——这正是本 Issue 的核心动作；
+> 4. 解除它需要数据库迁移 `0016`，可它来自一个已废弃、未合并的分支（#84，标记 not-planned），不在本 PR 里（[溯源记录](https://github.com/yinhui198456/team-capability-platform/pull/195#issuecomment-5336495254)）；
+> 5. **Sol 守住了规矩**：失败的事务自动回滚、零部分写入；没有偷偷手工改数据库"冒充通过"；按合同**停下来等用户授权**（改数据库结构/业务行为属于停止条件）。
 >
-> **教训记录**：本页此前根据一次"Goal stalled"快照判断"可以验收"，几小时后 Sol 又推了两个新提交——**快照会过时，验收时机只看上面两条规则，不看任何一次性的状态截图**。
->
-> 顺带学会读 Sol 的屏幕：`gh run view ... sleep 15` 循环 = 它在等 CI 出结果；底部 `Working (3m 02s)` = 还在干活；`Goal stalled` = 停机待命中。
+> 人话总结：代码、测试、评审全过了，但**地基（数据库老规矩）挡路**。要不要动地基，只有你能拍板。
 
-> [!todo] ✍️ 到时验收（先确认上面两个条件都 ✅）
-> ✏️ 填这里 → [打开本页编辑器](https://github.com/yinhui198456/ai-coding-playbook/edit/v5/content/cases/issue-194-member-core-flow.md)，`Ctrl+F` 搜「待我」，写在 `＿＿＿` 上，**Commit changes** 保存。
-> 1. **版本核对**（[#192](https://github.com/yinhui198456/team-capability-platform/issues/192) 准入）：问 Sol"测试环境当前部署的 SHA 是多少"，应等于 PR 最终顶端——版本对不上，验收结果不算数；
-> 2. 用测试身份登录上面的测试环境地址（**不是本地**）；
-> 3. 照站 2 检查单的 9 条逐条操作、逐条打勾；
+> [!todo] ✍️ 待我决策（当前唯一阻塞项）
+> Sol 请求授权的内容：让 CC 正式纳入 0016 等价迁移 + 补"后续评级扩展既有计划"的红测 + 顺手修一行走查脚本的时序问题；**不含其他重构**。修复后要重走：复审 → CI → 隔离环境重建 → 续跑验收。
+>
+> 我的决定：**授权 / 不授权 / 先聊聊** → 到 Sol 会话（`tmux attach -t tcp-codex-control`）或 #194 评论里回复。
+>
+> **我的决定（日期 + 内容）：**＿＿＿＿＿＿
+
+> [!todo] ✍️ 阻塞解除后：到时验收
+> 1. **版本核对**：问 Sol"测试环境当前部署的 SHA 是多少"，应等于 PR 最终顶端——对不上，验收结果不算数；
+> 2. 用测试身份登录**隔离 UAT 环境（19094）**；
+> 3. 照站 2 检查单的 9 条逐条操作、逐条打勾（Sol 预演已过的项也要亲手再过一遍——它替你预习，不替你签字）；
 > 4. 三种宽度都要试：1440、1024、768（F12 → 设备模拟）；
 > 5. 截图贴到 [#194 评论](https://github.com/yinhui198456/team-capability-platform/issues/194)里当 UAT 反馈，**截图不含账号凭据**。
 >
@@ -275,4 +296,4 @@ flowchart LR
 ## ✍️ 我的复盘（手写）
 
 - 印证的经验卡：＿＿＿＿＿＿
-- 新候选卡：＿＿＿＿＿＿（供参考的线索：**"独立审查是第一道真门禁"**——第一轮就拦 4 个 P1；以及 E2E 尾巴该不该留到下一轮）
+- 新候选卡：＿＿＿＿＿＿（供参考的线索：① **"独立审查是第一道真门禁"**——三轮拦下 5 个 P1；② **CI 全绿 ≠ 能验收**——真实 Chrome 在全绿后仍抓到 500；③ **验收环境要隔离**——独立数据库让"随便试"和"不动共享数据"两全；④ **AI 停在授权点是对的设计**——改数据库结构这种决策，它就该停下来问人）

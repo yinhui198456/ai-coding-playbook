@@ -27,4 +27,4 @@ flowchart LR
 | 案例 | 当前站 | 已印证的经验卡 |
 | --- | --- | --- |
 | [[cases/issue-176-task-detail-layout\|#176 任务详情首屏信息架构]] | 站 4 · Coding | [[AC-004-confirm-branch-first\|AC-004]]（开工当天就发生了分支/路径误写） |
-| [[cases/issue-194-member-core-flow\|#194 评级→草稿→显式生成任务]] | 站 8 · 验收 | 对照组：需求合同写细 + 独立审查闭环（第一轮拦下 4 个 P1） |
+| [[cases/issue-194-member-core-flow\|#194 评级→草稿→显式生成任务]] | 站 8 · 验收（⛔ 待授权决策） | 对照组：需求合同写细 + 三轮独立审查拦 5 个 P1 + CI 全绿后 Chrome 仍抓到 500 |
